@@ -11,14 +11,14 @@
     <style>
         /* --- CÀI ĐẶT MÀU SẮC & CƠ BẢN --- */
         :root {
-            --primary: #008080;      /* Teal - Màu thương hiệu */
-            --flag-red: #DA251D;     /* Đỏ cờ Việt Nam */
-            --star-yellow: #FFE680;  /* Vàng Pastel */
-            --bg-light: #F4F5F7;     /* Nền xám hiện đại */
+            --primary: #008080;      /* Teal */
+            --flag-red: #DA251D;     
+            --star-yellow: #FFE680;  
+            --bg-light: #F4F5F7;     
             --text-dark: #1A202C;    
             --text-gray: #4A5568;
             --white: #ffffff;
-            --radius: 8px;             
+            --radius: 8px;              
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -29,71 +29,38 @@
             color: var(--text-dark);
             line-height: 1.6;
             overflow-x: hidden;
+            scroll-behavior: smooth;
         }
 
-        h1, h2, h3, h4 { 
-            font-family: 'Poppins', sans-serif; 
-            line-height: 1.2;
-        }
-        
+        h1, h2, h3, h4 { font-family: 'Poppins', sans-serif; line-height: 1.2; }
         a { text-decoration: none; color: inherit; transition: 0.3s; }
         ul { list-style: none; }
         img { max-width: 100%; height: auto; display: block; }
 
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 24px;
-        }
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
 
         /* --- BUTTONS --- */
         .btn {
-            display: inline-block;
-            padding: 14px 32px;
-            border-radius: var(--radius);
-            font-weight: 600;
-            font-family: 'Poppins', sans-serif;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            border: none;
-            font-size: 1rem;
+            display: inline-block; padding: 14px 32px; border-radius: var(--radius);
+            font-weight: 600; font-family: 'Poppins', sans-serif; cursor: pointer;
+            transition: all 0.3s ease; border: none; font-size: 1rem;
         }
-
-        .btn-primary {
-            background-color: var(--primary);
-            color: var(--white);
-        }
-
-        .btn-primary:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
-        }
+        .btn-primary { background-color: var(--primary); color: var(--white); }
+        .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 4px 12px rgba(0,0,0,0.2); }
 
         /* --- HEADER --- */
         header {
-            background-color: var(--white);
-            padding: 15px 0;
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-            box-shadow: 0 1px 0px rgba(0,0,0,0.05);
+            background-color: var(--white); padding: 15px 0; position: sticky; top: 0;
+            z-index: 1000; box-shadow: 0 1px 0px rgba(0,0,0,0.05);
         }
-
         .nav-flex { display: flex; justify-content: space-between; align-items: center; }
         .logo-container { display: flex; align-items: center; gap: 10px; }
-
         .flag-icon {
-            width: 28px; height: 20px;
-            background-color: var(--flag-red);
-            display: flex; align-items: center; justify-content: center;
-            border-radius: 2px;
+            width: 28px; height: 20px; background-color: var(--flag-red);
+            display: flex; align-items: center; justify-content: center; border-radius: 2px;
         }
-        .flag-icon::after {
-            content: "★"; color: var(--star-yellow); font-size: 14px; line-height: 1;
-        }
-
+        .flag-icon::after { content: "★"; color: var(--star-yellow); font-size: 14px; line-height: 1; }
         .logo { font-size: 1.25rem; font-weight: 700; color: var(--text-dark); letter-spacing: -0.5px; font-family: 'Poppins', sans-serif; }
-
         .menu { display: flex; gap: 40px; }
         .menu a { font-weight: 500; color: var(--text-gray); }
         .menu a:hover { color: var(--primary); }
@@ -101,63 +68,26 @@
 
         /* --- HERO SECTION --- */
         .hero {
-            position: relative;
-            min-height: 85vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            color: var(--white); 
-            overflow: hidden; 
-            padding: 80px 20px;
+            position: relative; min-height: 85vh; display: flex; align-items: center; justify-content: center;
+            text-align: center; color: var(--white); overflow: hidden; padding: 80px 20px;
         }
-
         .hero-bg {
-            position: absolute;
-            top: 0; left: 0;
-            width: 100%; height: 100%;
+            position: absolute; top: 0; left: 0; width: 100%; height: 100%;
             background-image: url('https://images.unsplash.com/photo-1528127269322-539801943592?q=80&w=1920&auto=format&fit=crop');
-            background-size: cover;
-            background-position: center;
-            z-index: 1;
+            background-size: cover; background-position: center; z-index: 1;
             animation: kenburns 30s infinite alternate;
         }
-
         .hero-overlay {
-            position: absolute;
-            top: 0; left: 0;
-            width: 100%; height: 100%;
-            background: linear-gradient(to bottom, rgba(0,0,0,0.3), rgba(60, 50, 0, 0.4));
-            z-index: 2;
+            position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+            background: linear-gradient(to bottom, rgba(0,0,0,0.3), rgba(60, 50, 0, 0.4)); z-index: 2;
         }
-
-        .hero-content {
-            position: relative;
-            z-index: 3; 
-            max-width: 900px; 
-            padding: 20px;
-        }
-
+        .hero-content { position: relative; z-index: 3; max-width: 900px; padding: 20px; }
         .hero h1 { font-size: 3.5rem; margin-bottom: 24px; font-weight: 700; text-shadow: 0 2px 10px rgba(0,0,0,0.3); }
         .hero p { font-size: 1.25rem; margin-bottom: 40px; opacity: 0.95; max-width: 600px; margin-left: auto; margin-right: auto; }
+        .btn-flag { background-color: var(--flag-red); color: var(--star-yellow); border: 2px solid var(--flag-red); }
+        .btn-flag:hover { background-color: #b31b14; color: var(--white); border-color: #b31b14; transform: translateY(-2px); box-shadow: 0 0 20px rgba(218, 37, 29, 0.6); }
 
-        .btn-flag {
-            background-color: var(--flag-red);
-            color: var(--star-yellow);
-            border: 2px solid var(--flag-red);
-        }
-        .btn-flag:hover {
-            background-color: #b31b14;
-            color: var(--white);
-            border-color: #b31b14;
-            transform: translateY(-2px);
-            box-shadow: 0 0 20px rgba(218, 37, 29, 0.6); 
-        }
-
-        @keyframes kenburns {
-            0% { transform: scale(1); }
-            100% { transform: scale(1.15); } 
-        }
+        @keyframes kenburns { 0% { transform: scale(1); } 100% { transform: scale(1.15); } }
 
         /* --- SECTIONS --- */
         .value-prop { padding: 100px 0; background-color: var(--white); }
@@ -165,8 +95,7 @@
         .value-item h3 { font-size: 1.25rem; margin: 20px 0 10px; }
         .value-item p { color: var(--text-gray); font-size: 0.95rem; }
         .icon-box {
-            width: 50px; height: 50px;
-            background-color: rgba(0, 128, 128, 0.1); color: var(--primary);
+            width: 50px; height: 50px; background-color: rgba(0, 128, 128, 0.1); color: var(--primary);
             border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.2rem; margin-bottom: 20px;
         }
 
@@ -174,65 +103,113 @@
         .section-header { margin-bottom: 60px; text-align: left; }
         .section-header h2 { font-size: 2.5rem; margin-bottom: 15px; }
         .section-header p { color: var(--text-gray); max-width: 100%; }
-        
         .card-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; }
-
-        .card {
-            background: var(--white); border-radius: var(--radius); overflow: hidden;
-            border: 1px solid rgba(0,0,0,0.05); transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
+        .card { background: var(--white); border-radius: var(--radius); overflow: hidden; border: 1px solid rgba(0,0,0,0.05); transition: transform 0.3s ease, box-shadow 0.3s ease; }
         .card:hover { transform: translateY(-5px); box-shadow: 0 20px 40px rgba(0,0,0,0.08); }
-        
-        .card-img { 
-            height: 240px;
-            background-size: cover; 
-            background-position: center; 
-            position: relative;
-            background-color: #eee;
-        }
-        
-        .card-badge {
-            position: absolute; top: 15px; left: 15px;
-            background-color: var(--flag-red); color: var(--star-yellow);
-            padding: 5px 12px; font-size: 0.75rem; font-weight: 600; border-radius: 4px; text-transform: uppercase;
-        }
-
+        .card-img { height: 240px; background-size: cover; background-position: center; position: relative; background-color: #eee; }
+        .card-badge { position: absolute; top: 15px; left: 15px; background-color: var(--flag-red); color: var(--star-yellow); padding: 5px 12px; font-size: 0.75rem; font-weight: 600; border-radius: 4px; text-transform: uppercase; }
         .card-content { padding: 25px; }
         .card-meta { font-size: 0.85rem; color: var(--text-gray); margin-bottom: 10px; font-weight: 500; text-transform: uppercase; letter-spacing: 1px;}
         .card h3 { font-size: 1.25rem; margin-bottom: 0; }
 
-        /* --- FORM SECTION --- */
+        /* --- FORM --- */
         .lead-form-section { padding: 100px 0; background-color: var(--white); }
         .form-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
         .form-info h2 { font-size: 3rem; margin-bottom: 20px; color: var(--primary); }
         .form-info p { color: var(--text-gray); margin-bottom: 30px; font-size: 1.1rem; }
         .form-box { background: var(--white); padding: 40px; border-radius: var(--radius); box-shadow: 0 4px 20px rgba(0,0,0,0.08); border: 1px solid #eee; }
-        
         .form-group { margin-bottom: 20px; }
         .form-label { display: block; margin-bottom: 8px; font-weight: 600; font-size: 0.9rem; color: var(--text-dark); }
         .form-control { width: 100%; padding: 14px; border: 1px solid #e2e8f0; border-radius: var(--radius); font-family: 'Inter', sans-serif; font-size: 1rem; transition: 0.2s; background-color: #f8fafc; }
         .form-control:focus { outline: none; border-color: var(--primary); background-color: var(--white); }
-        
         .step-pill { display: inline-block; background-color: rgba(218, 37, 29, 0.1); color: var(--flag-red); padding: 4px 12px; border-radius: 20px; font-size: 0.75rem; font-weight: 700; margin-bottom: 10px; }
+        #style-warning { color: var(--flag-red); font-size: 0.85rem; margin-top: 8px; display: none; background-color: rgba(218, 37, 29, 0.05); padding: 8px 12px; border-radius: 4px; border-left: 3px solid var(--flag-red); }
 
-        /* CSS cho phần thông báo lỗi (New) */
-        #style-warning {
-            color: var(--flag-red);
-            font-size: 0.85rem;
-            margin-top: 8px;
-            display: none; /* Mặc định ẩn */
-            background-color: rgba(218, 37, 29, 0.05);
-            padding: 8px 12px;
-            border-radius: 4px;
-            border-left: 3px solid var(--flag-red);
+        /* --- REVIEWS SLIDER (UPDATED) --- */
+        .reviews { padding: 80px 0; background-color: var(--bg-light); overflow: hidden; }
+        
+        .slider-container {
+            position: relative;
+            width: 100%;
+            /* Để chừa chỗ cho mũi tên nếu màn hình nhỏ */
+            padding: 0 20px; 
         }
 
-        .reviews { padding: 100px 0; background-color: var(--bg-light); }
-        .review-card { background: var(--white); padding: 30px; border-radius: var(--radius); box-shadow: 0 2px 10px rgba(0,0,0,0.03); margin-top: 30px; }
-        .review-text { font-size: 1.1rem; color: var(--text-dark); margin-bottom: 20px; font-style: normal; }
-        .reviewer-info strong { display: block; font-size: 0.9rem; }
-        .reviewer-info span { font-size: 0.8rem; color: var(--text-gray); }
+        .slider-viewport {
+            width: 100%;
+            overflow: hidden; 
+            position: relative;
+            border-radius: var(--radius);
+        }
 
+        .slider-track {
+            display: flex;
+            width: 300%; /* 3 Slides */
+            transition: transform 0.5s cubic-bezier(0.25, 1, 0.5, 1);
+        }
+
+        .slide {
+            width: 33.3333%;
+            padding: 10px;
+            box-sizing: border-box;
+        }
+
+        .review-grid-slide {
+            display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px;
+        }
+
+        .reviews .review-card {
+            background: var(--white); padding: 30px; border-radius: var(--radius);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05); height: 100%;
+            display: flex; flex-direction: column; justify-content: space-between;
+        }
+
+        .review-text { font-size: 1rem; color: var(--text-dark); margin-bottom: 20px; font-style: italic; }
+        .reviewer-info { border-top: 1px solid #eee; padding-top: 15px; display: flex; align-items: center; gap: 15px; }
+        .avatar-placeholder {
+            width: 40px; height: 40px; background-color: var(--primary); color: white;
+            border-radius: 50%; display: flex; align-items: center; justify-content: center;
+            font-weight: bold; font-size: 1.2rem; flex-shrink: 0;
+        }
+        .location-tag { font-size: 0.75rem; color: var(--primary); font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 8px; display: block; }
+
+        /* DOTS */
+        .slider-dots { display: flex; justify-content: center; margin-top: 40px; gap: 10px; }
+        .dot { width: 12px; height: 12px; background-color: #cbd5e0; border-radius: 50%; cursor: pointer; transition: all 0.3s ease; }
+        .dot.active { background-color: var(--primary); transform: scale(1.3); }
+
+        /* ARROWS (NEW) */
+        .slider-arrow {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 50px;
+            height: 50px;
+            background-color: var(--white);
+            border: 1px solid #eee;
+            border-radius: 50%;
+            color: var(--text-dark);
+            font-size: 1.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            z-index: 10;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+            user-select: none;
+        }
+
+        .slider-arrow:hover {
+            background-color: var(--primary);
+            color: var(--white);
+            box-shadow: 0 6px 16px rgba(0, 128, 128, 0.3);
+        }
+
+        .slider-arrow.prev { left: -25px; }
+        .slider-arrow.next { right: -25px; }
+
+        /* --- FOOTER --- */
         footer { background-color: var(--text-dark); color: #fff; padding: 60px 0 30px; }
         .footer-content { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 40px; margin-bottom: 40px; }
         .footer-logo { font-family: 'Poppins', sans-serif; font-weight: 700; font-size: 1.5rem; margin-bottom: 15px; }
@@ -241,10 +218,18 @@
         .footer-col a:hover { opacity: 1; color: var(--primary); }
         .copyright { border-top: 1px solid #333; padding-top: 30px; text-align: center; color: #666; font-size: 0.85rem; }
 
+        /* --- RESPONSIVE --- */
         @media (max-width: 900px) {
             .hero h1 { font-size: 3rem; }
             .value-grid { grid-template-columns: repeat(2, 1fr); }
             .form-layout { grid-template-columns: 1fr; }
+            .review-grid-slide { grid-template-columns: 1fr; gap: 20px; }
+            .reviews .review-card { padding: 20px; }
+            
+            /* Điều chỉnh arrow trên mobile */
+            .slider-arrow { width: 40px; height: 40px; font-size: 1.2rem; }
+            .slider-arrow.prev { left: -10px; }
+            .slider-arrow.next { right: -10px; }
         }
 
         @media (max-width: 768px) {
@@ -286,7 +271,6 @@
     <section class="hero">
         <div class="hero-bg"></div>
         <div class="hero-overlay"></div>
-        
         <div class="hero-content">
             <h1>Your Dream Trip,<br>Expertly Planned.</h1>
             <p>Stop scrolling through endless reviews. We design personalized itineraries tailored to your budget, style, and soul.</p>
@@ -322,85 +306,42 @@
                 <h2>Curated Experiences</h2>
                 <p>Authentic adventures you can't find on standard tour booking sites.</p>
             </div>
-            
             <div class="card-grid">
                 <div class="card">
-                    <div class="card-img" style="background-image: url('https://images.unsplash.com/photo-1583417319070-4a69db38a482?q=80&w=800&auto=format&fit=crop');">
-                        <span class="card-badge">Top Rated</span>
-                    </div>
-                    <div class="card-content">
-                        <div class="card-meta">Saigon • Food</div>
-                        <h3>Saigon Vespa Food Tour</h3>
-                    </div>
+                    <div class="card-img" style="background-image: url('https://images.unsplash.com/photo-1583417319070-4a69db38a482?q=80&w=800&auto=format&fit=crop');"><span class="card-badge">Top Rated</span></div>
+                    <div class="card-content"><div class="card-meta">Saigon • Food</div><h3>Saigon Vespa Food Tour</h3></div>
                 </div>
-
                 <div class="card">
-                    <div class="card-img" style="background-image: url('https://images.unsplash.com/photo-1699425413886-a6490b7bd009?q=80&w=387&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');">
-                        <span class="card-badge">Trending</span>
-                    </div>
-                    <div class="card-content">
-                        <div class="card-meta">Da Lat • Nature</div>
-                        <h3>Cloud Hunting & Camping</h3>
-                    </div>
+                    <div class="card-img" style="background-image: url('https://images.unsplash.com/photo-1699425413886-a6490b7bd009?q=80&w=387&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');"><span class="card-badge">Trending</span></div>
+                    <div class="card-content"><div class="card-meta">Da Lat • Nature</div><h3>Cloud Hunting & Camping</h3></div>
                 </div>
-
                 <div class="card">
                     <div class="card-img" style="background-image: url('https://images.unsplash.com/photo-1729031895987-dd4d7019ac60?q=80&w=387&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');"></div>
-                    <div class="card-content">
-                        <div class="card-meta">Hoi An • Culture</div>
-                        <h3>Lantern Making Workshop</h3>
-                    </div>
+                    <div class="card-content"><div class="card-meta">Hoi An • Culture</div><h3>Lantern Making Workshop</h3></div>
                 </div>
-
                 <div class="card">
                     <div class="card-img" style="background-image: url('https://images.unsplash.com/photo-1764000895410-26a847ad39fb?q=80&w=394&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');"></div>
-                    <div class="card-content">
-                        <div class="card-meta">Hanoi • Photography</div>
-                        <h3>Old Quarter Photo Walk</h3>
-                    </div>
+                    <div class="card-content"><div class="card-meta">Hanoi • Photography</div><h3>Old Quarter Photo Walk</h3></div>
                 </div>
-
                 <div class="card">
                     <div class="card-img" style="background-image: url('https://images.unsplash.com/photo-1663684591502-93887202a863?q=80&w=870&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');"></div>
-                    <div class="card-content">
-                        <div class="card-meta">Da Nang • Beach</div>
-                        <h3>Golden Bridge & My Khe</h3>
-                    </div>
+                    <div class="card-content"><div class="card-meta">Da Nang • Beach</div><h3>Golden Bridge & My Khe</h3></div>
                 </div>
-
                 <div class="card">
                     <div class="card-img" style="background-image: url('https://images.unsplash.com/photo-1666160416071-f760a7af9ea6?q=80&w=870&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');"></div>
-                    <div class="card-content">
-                        <div class="card-meta">Sapa • Trekking</div>
-                        <h3>Rice Fields Adventure</h3>
-                    </div>
+                    <div class="card-content"><div class="card-meta">Sapa • Trekking</div><h3>Rice Fields Adventure</h3></div>
                 </div>
-
                 <div class="card">
-                    <div class="card-img" style="background-image: url('https://images.unsplash.com/photo-1662622600433-f31acfd11e04?q=80&w=870&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');">
-                    </div>
-                    <div class="card-content">
-                        <div class="card-meta">Phu Yen • Coastal</div>
-                        <h3>Ghenh Da Dia & Hidden Cliffs</h3>
-                    </div>
+                    <div class="card-img" style="background-image: url('https://images.unsplash.com/photo-1662622600433-f31acfd11e04?q=80&w=870&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');"></div>
+                    <div class="card-content"><div class="card-meta">Phu Yen • Coastal</div><h3>Ghenh Da Dia & Hidden Cliffs</h3></div>
                 </div>
-
                 <div class="card">
-                    <div class="card-img" style="background-image: url('https://images.unsplash.com/photo-1621094305060-081171d1c171?q=80&w=774&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');">
-                         <span class="card-badge">Relax</span>
-                    </div>
-                    <div class="card-content">
-                        <div class="card-meta">Phu Quoc • Island</div>
-                        <h3>Sunset Town & Starfish Beach</h3>
-                    </div>
+                    <div class="card-img" style="background-image: url('https://images.unsplash.com/photo-1621094305060-081171d1c171?q=80&w=774&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');"><span class="card-badge">Relax</span></div>
+                    <div class="card-content"><div class="card-meta">Phu Quoc • Island</div><h3>Sunset Town & Starfish Beach</h3></div>
                 </div>
-
                 <div class="card">
                     <div class="card-img" style="background-image: url('https://images.unsplash.com/photo-1708487864802-a85aa984c93a?q=80&w=1029&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');"></div>
-                    <div class="card-content">
-                        <div class="card-meta">Nha Trang • Diving</div>
-                        <h3>Coral Reef & Mud Bath</h3>
-                    </div>
+                    <div class="card-content"><div class="card-meta">Nha Trang • Diving</div><h3>Coral Reef & Mud Bath</h3></div>
                 </div>
             </div>
         </div>
@@ -413,15 +354,13 @@
                     <h2>Design Your Trip</h2>
                     <p>Tell us a bit about your travel style. Our local experts will craft a preliminary itinerary and send it to your inbox within 24 hours.</p>
                     <ul style="color: var(--text-gray); font-size: 0.95rem;">
-                        <li style="margin-bottom: 10px;">✓  Completely Free Consultation</li>
-                        <li style="margin-bottom: 10px;">✓  100% Customizable</li>
-                        <li style="margin-bottom: 10px;">✓  Support Local Communities</li>
+                        <li style="margin-bottom: 10px;">✓ Completely Free Consultation</li>
+                        <li style="margin-bottom: 10px;">✓ 100% Customizable</li>
+                        <li style="margin-bottom: 10px;">✓ Support Local Communities</li>
                     </ul>
                 </div>
-
                 <div class="form-box">
                     <form action="https://formspree.io/f/xwvkjbyb" method="POST">
-                        
                         <div class="form-group">
                             <span class="step-pill">STEP 1</span>
                             <label class="form-label">Where do you want to go?</label>
@@ -438,7 +377,6 @@
                                 <option value="NhaTrang">Nha Trang</option>
                             </select>
                         </div>
-                        
                         <div class="form-group">
                             <span class="step-pill">STEP 2</span>
                             <label class="form-label">Estimated Budget (per person)</label>
@@ -452,7 +390,6 @@
                                 <option value="flexible">I'm flexible</option>
                             </select>
                         </div>
-
                         <div class="form-group">
                             <span class="step-pill">STEP 3</span>
                             <label class="form-label">Travel Style</label>
@@ -463,12 +400,8 @@
                                 <option value="Culture">Culture & History</option>
                                 <option value="Foodie">Street Food Hunter</option>
                             </select>
-                            
-                            <p id="style-warning">
-                                To ensure the best experience, <b>Luxury & Resort</b> requests require a minimum budget of 8.000.000 VND. Please adjust your budget or select a different style.
-                            </p>
+                            <p id="style-warning">To ensure the best experience, <b>Luxury & Resort</b> requests require a minimum budget of 8.000.000 VND. Please adjust your budget or select a different style.</p>
                         </div>
-
                         <div class="form-group">
                             <span class="step-pill">STEP 4</span>
                             <label class="form-label">Your Details</label>
@@ -476,7 +409,6 @@
                             <input type="email" name="Email" placeholder="Email Address" class="form-control" required>
                             <input type="text" name="Note" placeholder="Any special requests?" class="form-control" style="margin-top: 10px;">
                         </div>
-
                         <button type="submit" class="btn btn-primary" style="width: 100%; margin-top: 10px;">Get My Itinerary</button>
                     </form>
                 </div>
@@ -486,31 +418,80 @@
 
     <section class="reviews" id="reviews">
         <div class="container">
-            <div class="section-header" style="text-align: center;">
-                <h2>Trusted by Travelers</h2>
+            <div class="section-header" style="text-align: center; margin-bottom: 40px;">
+                <h2>Traveler Stories</h2>
+                <p>Real experiences from 9 different destinations across Vietnam.</p>
             </div>
-            <div class="card-grid">
-                <div class="review-card">
-                    <p class="review-text">"I never thought I'd dare to try Balut (duck egg), but thanks to my Local Buddy Minh, it was the highlight of the trip!"</p>
-                    <div class="reviewer-info">
-                        <strong>Sarah Jenkins</strong>
-                        <span>Australia</span>
+            
+            <div class="slider-container">
+                
+                <button class="slider-arrow prev" onclick="prevSlide()">&#10094;</button>
+
+                <div class="slider-viewport">
+                    <div class="slider-track" id="sliderTrack">
+                        
+                        <div class="slide">
+                            <div class="review-grid-slide">
+                                <div class="review-card">
+                                    <div><span class="location-tag">Saigon (HCMC)</span><p class="review-text">"I never thought I'd dare to try Balut (duck egg), but thanks to my Local Buddy Minh on the Vespa tour, it was the highlight of the trip! The traffic is crazy but organized."</p></div>
+                                    <div class="reviewer-info"><div class="avatar-placeholder">S</div><div><strong>Sarah Jenkins</strong><span style="display:block; font-size:0.8rem; color:#888;">Australia</span></div></div>
+                                </div>
+                                <div class="review-card">
+                                    <div><span class="location-tag">Da Lat</span><p class="review-text">"Perfectly organized. No crowds, just hidden cafes in the pine forests. The cloud hunting tour at 4 AM was freezing but absolutely magical."</p></div>
+                                    <div class="reviewer-info"><div class="avatar-placeholder">M</div><div><strong>Mark & Emily</strong><span style="display:block; font-size:0.8rem; color:#888;">United Kingdom</span></div></div>
+                                </div>
+                                <div class="review-card">
+                                    <div><span class="location-tag">Hoi An</span><p class="review-text">"The lantern making workshop was peaceful. Hoi An at night is like a movie set. We loved the Banh Mi Phuong recommendations!"</p></div>
+                                    <div class="reviewer-info"><div class="avatar-placeholder">J</div><div><strong>Jessica Alva</strong><span style="display:block; font-size:0.8rem; color:#888;">USA</span></div></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="slide">
+                            <div class="review-grid-slide">
+                                <div class="review-card">
+                                    <div><span class="location-tag">Hanoi</span><p class="review-text">"Egg Coffee is life-changing! The Old Quarter is chaotic beauty. Our guide took us to a train street cafe that was safe and perfect for photos."</p></div>
+                                    <div class="reviewer-info"><div class="avatar-placeholder">D</div><div><strong>David Chen</strong><span style="display:block; font-size:0.8rem; color:#888;">Singapore</span></div></div>
+                                </div>
+                                <div class="review-card">
+                                    <div><span class="location-tag">Da Nang</span><p class="review-text">"The Golden Bridge is crowded, but going early as suggested made all the difference. My Khe beach is incredibly clean."</p></div>
+                                    <div class="reviewer-info"><div class="avatar-placeholder">L</div><div><strong>Liam O'Connor</strong><span style="display:block; font-size:0.8rem; color:#888;">Ireland</span></div></div>
+                                </div>
+                                <div class="review-card">
+                                    <div><span class="location-tag">Sapa</span><p class="review-text">"Trekking through the rice terraces with a Hmong guide was a workout, but the views are unbeatable. Sleeping in a homestay was a genuine cultural reset."</p></div>
+                                    <div class="reviewer-info"><div class="avatar-placeholder">A</div><div><strong>Anna Kraus</strong><span style="display:block; font-size:0.8rem; color:#888;">Germany</span></div></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="slide">
+                            <div class="review-grid-slide">
+                                <div class="review-card">
+                                    <div><span class="location-tag">Phu Yen</span><p class="review-text">"Ghenh Da Dia looks like another planet. I saw almost zero other tourists there. Authentic seafood and stunning cliffs."</p></div>
+                                    <div class="reviewer-info"><div class="avatar-placeholder">P</div><div><strong>Pierre & Marie</strong><span style="display:block; font-size:0.8rem; color:#888;">France</span></div></div>
+                                </div>
+                                <div class="review-card">
+                                    <div><span class="location-tag">Phu Quoc</span><p class="review-text">"Sunset Town feels like Italy! We loved the cable car ride and the Starfish beach. A perfect relaxing end to our 2-week trip."</p></div>
+                                    <div class="reviewer-info"><div class="avatar-placeholder">K</div><div><strong>Kim Min-jun</strong><span style="display:block; font-size:0.8rem; color:#888;">South Korea</span></div></div>
+                                </div>
+                                <div class="review-card">
+                                    <div><span class="location-tag">Nha Trang</span><p class="review-text">"The mud bath was weird at first but my skin felt amazing afterwards! The diving spots have beautiful coral reefs."</p></div>
+                                    <div class="reviewer-info"><div class="avatar-placeholder">R</div><div><strong>Rebecca Smith</strong><span style="display:block; font-size:0.8rem; color:#888;">Canada</span></div></div>
+                                </div>
+                            </div>
+                        </div>
+
                     </div>
                 </div>
-                <div class="review-card">
-                    <p class="review-text">"Perfectly organized. No crowds, just hidden cafes in the pine forests of Da Lat. Exactly what we asked for."</p>
-                    <div class="reviewer-info">
-                        <strong>Mark & Emily</strong>
-                        <span>United Kingdom</span>
-                    </div>
-                </div>
-                <div class="review-card">
-                    <p class="review-text">"The lantern making workshop in Hoi An was magical. My kids loved every second of it."</p>
-                    <div class="reviewer-info">
-                        <strong>Jessica Alva</strong>
-                        <span>USA</span>
-                    </div>
-                </div>
+
+                <button class="slider-arrow next" onclick="nextSlide()">&#10095;</button>
+
+            </div>
+
+            <div class="slider-dots">
+                <div class="dot active" onclick="goToSlide(0)"></div>
+                <div class="dot" onclick="goToSlide(1)"></div>
+                <div class="dot" onclick="goToSlide(2)"></div>
             </div>
         </div>
     </section>
@@ -522,55 +503,70 @@
                     <div class="footer-logo">VIETNAM CURATED.</div>
                     <p style="color: #aaa; max-width: 300px;">Designing authentic Vietnamese journeys for travelers who seek connection, not just sightseeing.</p>
                 </div>
-                <div class="footer-col">
-                    <h4>Company</h4>
-                    <a href="#">About Us</a>
-                    <a href="#">Our Team</a>
-                    <a href="#">Careers</a>
-                </div>
-                <div class="footer-col">
-                    <h4>Follow Us</h4>
-                    <a href="https://www.instagram.com/penguin.is_chip/" target="_blank">Instagram</a>
-                    <a href="https://www.facebook.com/khang.le.712715/" target="_blank">Facebook</a>   
-                </div>
+                <div class="footer-col"><h4>Company</h4><a href="#">About Us</a><a href="#">Our Team</a><a href="#">Careers</a></div>
+                <div class="footer-col"><h4>Follow Us</h4><a href="https://www.instagram.com/penguin.is_chip/" target="_blank">Instagram</a><a href="https://www.facebook.com/khang.le.712715/" target="_blank">Facebook</a></div>
             </div>
-            <div class="copyright">
-                &copy; 2025 Vietnam Curated. All rights reserved.
-            </div>
+            <div class="copyright">&copy; 2025 Vietnam Curated. All rights reserved.</div>
         </div>
     </footer>
 
     <script>
+        // -----------------------
+        // LOGIC SLIDER REVIEW (UPDATED: CYCLING & ARROWS)
+        // -----------------------
+        const track = document.getElementById('sliderTrack');
+        const dots = document.querySelectorAll('.dot');
+        let currentIndex = 0;
+        const totalSlides = 3;
+
+        function updateSlider() {
+            // Tính toán vị trí % để dịch chuyển
+            const percentage = currentIndex * -33.3333; 
+            track.style.transform = `translateX(${percentage}%)`;
+            
+            // Cập nhật dots
+            dots.forEach(dot => dot.classList.remove('active'));
+            dots[currentIndex].classList.add('active');
+        }
+
+        function goToSlide(slideIndex) {
+            currentIndex = slideIndex;
+            updateSlider();
+        }
+
+        function nextSlide() {
+            // Logic vòng lặp: Nếu đang ở cuối (2), cộng 1 thành 3, chia lấy dư cho 3 thì về 0
+            currentIndex = (currentIndex + 1) % totalSlides;
+            updateSlider();
+        }
+
+        function prevSlide() {
+            // Logic vòng lặp lùi: Nếu ở 0, trừ 1 ra âm, cộng thêm totalSlides rồi chia lấy dư
+            currentIndex = (currentIndex - 1 + totalSlides) % totalSlides;
+            updateSlider();
+        }
+
+        // -----------------------
+        // LOGIC FORM VALIDATION
+        // -----------------------
         document.addEventListener('DOMContentLoaded', function() {
-            // Lấy các phần tử cần thiết
             const budgetSelect = document.getElementById('budgetSelect');
             const styleSelect = document.getElementById('styleSelect');
             const warningText = document.getElementById('style-warning');
 
-            // Hàm kiểm tra logic
             function validateLuxuryOption() {
                 const selectedBudget = budgetSelect.value;
                 const selectedStyle = styleSelect.value;
-
-                // Điều kiện: Budget là "4m-8m" VÀ Style là "Luxury"
                 if (selectedBudget === "4m-8m" && selectedStyle === "Luxury") {
-                    
-                    // 1. Reset ô chọn Style về rỗng
                     styleSelect.value = "";
-                    
-                    // 2. Hiện thông báo màu đỏ
                     warningText.style.display = "block";
                 } else {
-                    // Nếu điều kiện không còn đúng (ví dụ chọn budget cao hơn hoặc style khác), ẩn thông báo
                     warningText.style.display = "none";
                 }
             }
-
-            // Lắng nghe sự thay đổi trên cả 2 ô chọn
             budgetSelect.addEventListener('change', validateLuxuryOption);
             styleSelect.addEventListener('change', validateLuxuryOption);
         });
     </script>
-
 </body>
 </html>
