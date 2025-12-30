@@ -21,7 +21,7 @@
             --text-dark: #1A202C;    
             --text-gray: #4A5568;
             --white: #ffffff;
-            --radius: 8px;            
+            --radius: 8px;             
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -440,6 +440,20 @@
 
                         <div class="form-group">
                             <span class="step-pill">STEP 3</span>
+                            <label class="form-label">Estimated Budget (per person)</label>
+                            <select name="Budget" class="form-control" required>
+                                <option value="" disabled selected>Select budget range...</option>
+                                <option value="4m-8m">4.000.000 - 8.000.000 VND</option>
+                                <option value="8m-12m">8.000.000 - 12.000.000 VND</option>
+                                <option value="12m-16m">12.000.000 - 16.000.000 VND</option>
+                                <option value="16m-20m">16.000.000 - 20.000.000 VND</option>
+                                <option value="20m+">Over 20.000.000 VND</option>
+                                <option value="flexible">I'm flexible</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <span class="step-pill">STEP 4</span>
                             <label class="form-label">Your Details</label>
                             <input type="text" name="Name" placeholder="Your Name" class="form-control" style="margin-bottom: 10px;" required>
                             <input type="email" name="Email" placeholder="Email Address" class="form-control" required>
@@ -500,7 +514,7 @@
                 <div class="footer-col">
                     <h4>Follow Us</h4>
                     <a href="https://www.instagram.com/penguin.is_chip/" target="_blank">Instagram</a>
-                    <a href="https://www.facebook.com/khang.le.712715/" target="_blank">Facebook</a>  
+                    <a href="https://www.facebook.com/khang.le.712715/" target="_blank">Facebook</a>   
                 </div>
             </div>
             <div class="copyright">
@@ -511,4 +525,3 @@
 
 </body>
 </html>
-
