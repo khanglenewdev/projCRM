@@ -13,10 +13,7 @@
         :root {
             --primary: #008080;      /* Teal - Màu thương hiệu */
             --flag-red: #DA251D;     /* Đỏ cờ Việt Nam */
-            
-            /* UPDATE MÀU VÀNG: Pastel nhẹ nhàng, không bị chói */
-            --star-yellow: #FFE680;  
-            
+            --star-yellow: #FFE680;  /* Vàng Pastel */
             --bg-light: #F4F5F7;     /* Nền xám hiện đại */
             --text-dark: #1A202C;    
             --text-gray: #4A5568;
@@ -31,7 +28,7 @@
             background-color: var(--white);
             color: var(--text-dark);
             line-height: 1.6;
-            overflow-x: hidden; /* Ngăn cuộn ngang trên mobile */
+            overflow-x: hidden;
         }
 
         h1, h2, h3, h4 { 
@@ -72,7 +69,7 @@
             box-shadow: 0 4px 12px rgba(0,0,0,0.2);
         }
 
-        /* --- 1. HEADER --- */
+        /* --- HEADER --- */
         header {
             background-color: var(--white);
             padding: 15px 0;
@@ -83,10 +80,8 @@
         }
 
         .nav-flex { display: flex; justify-content: space-between; align-items: center; }
-
         .logo-container { display: flex; align-items: center; gap: 10px; }
 
-        /* Lá cờ nhỏ trên header */
         .flag-icon {
             width: 28px; height: 20px;
             background-color: var(--flag-red);
@@ -104,43 +99,35 @@
         .menu a:hover { color: var(--primary); }
         .menu-toggle { display: none; font-size: 1.5rem; cursor: pointer; color: var(--text-dark); }
 
-        /* --- 2. HERO SECTION (CINEMATIC) --- */
+        /* --- HERO SECTION --- */
         .hero {
             position: relative;
-            min-height: 85vh; /* Sử dụng min-height thay vì height cứng để tốt hơn cho mobile */
+            min-height: 85vh;
             display: flex;
             align-items: center;
             justify-content: center;
             text-align: center;
             color: var(--white); 
             overflow: hidden; 
-            padding: 80px 20px; /* Thêm padding để nội dung không bị sát mép trên mobile */
+            padding: 80px 20px;
         }
 
-        /* Lớp nền ảnh động (Fake Video) */
         .hero-bg {
             position: absolute;
             top: 0; left: 0;
             width: 100%; height: 100%;
-            /* Ảnh nền chất lượng cao (Hạ Long/Ninh Bình vibe) */
             background-image: url('https://images.unsplash.com/photo-1528127269322-539801943592?q=80&w=1920&auto=format&fit=crop');
             background-size: cover;
             background-position: center;
             z-index: 1;
-            /* Hiệu ứng Ken Burns (Zoom chậm) */
             animation: kenburns 30s infinite alternate;
         }
 
-        /* Lớp phủ mờ (Overlay) */
         .hero-overlay {
             position: absolute;
             top: 0; left: 0;
             width: 100%; height: 100%;
-            background: linear-gradient(
-                to bottom, 
-                rgba(0,0,0,0.3),  /* Đen mờ ở trên */
-                rgba(60, 50, 0, 0.4) /* Vàng nâu mờ ở dưới */
-            );
+            background: linear-gradient(to bottom, rgba(0,0,0,0.3), rgba(60, 50, 0, 0.4));
             z-index: 2;
         }
 
@@ -154,10 +141,9 @@
         .hero h1 { font-size: 3.5rem; margin-bottom: 24px; font-weight: 700; text-shadow: 0 2px 10px rgba(0,0,0,0.3); }
         .hero p { font-size: 1.25rem; margin-bottom: 40px; opacity: 0.95; max-width: 600px; margin-left: auto; margin-right: auto; }
 
-        /* Nút đỏ nổi bật giống lá cờ */
         .btn-flag {
             background-color: var(--flag-red);
-            color: var(--star-yellow); /* Sử dụng màu vàng dịu mới */
+            color: var(--star-yellow);
             border: 2px solid var(--flag-red);
         }
         .btn-flag:hover {
@@ -173,7 +159,7 @@
             100% { transform: scale(1.15); } 
         }
 
-        /* --- 3. VALUE PROPOSITION --- */
+        /* --- SECTIONS --- */
         .value-prop { padding: 100px 0; background-color: var(--white); }
         .value-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 50px; }
         .value-item h3 { font-size: 1.25rem; margin: 20px 0 10px; }
@@ -184,7 +170,6 @@
             border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.2rem; margin-bottom: 20px;
         }
 
-        /* --- 4. EXPERIENCES --- */
         .experience { padding: 100px 0; background-color: var(--bg-light); }
         .section-header { margin-bottom: 60px; text-align: left; }
         .section-header h2 { font-size: 2.5rem; margin-bottom: 15px; }
@@ -198,13 +183,12 @@
         }
         .card:hover { transform: translateY(-5px); box-shadow: 0 20px 40px rgba(0,0,0,0.08); }
         
-        /* CSS cho ảnh thẻ */
         .card-img { 
-            height: 240px; /* Chiều cao cố định để các thẻ bằng nhau */
+            height: 240px;
             background-size: cover; 
             background-position: center; 
             position: relative;
-            background-color: #eee; /* Màu nền tạm trong lúc chờ ảnh load */
+            background-color: #eee;
         }
         
         .card-badge {
@@ -217,7 +201,7 @@
         .card-meta { font-size: 0.85rem; color: var(--text-gray); margin-bottom: 10px; font-weight: 500; text-transform: uppercase; letter-spacing: 1px;}
         .card h3 { font-size: 1.25rem; margin-bottom: 0; }
 
-        /* --- 5. LEAD FORM --- */
+        /* --- FORM SECTION --- */
         .lead-form-section { padding: 100px 0; background-color: var(--white); }
         .form-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
         .form-info h2 { font-size: 3rem; margin-bottom: 20px; color: var(--primary); }
@@ -231,14 +215,24 @@
         
         .step-pill { display: inline-block; background-color: rgba(218, 37, 29, 0.1); color: var(--flag-red); padding: 4px 12px; border-radius: 20px; font-size: 0.75rem; font-weight: 700; margin-bottom: 10px; }
 
-        /* --- 6. REVIEWS --- */
+        /* CSS cho phần thông báo lỗi (New) */
+        #style-warning {
+            color: var(--flag-red);
+            font-size: 0.85rem;
+            margin-top: 8px;
+            display: none; /* Mặc định ẩn */
+            background-color: rgba(218, 37, 29, 0.05);
+            padding: 8px 12px;
+            border-radius: 4px;
+            border-left: 3px solid var(--flag-red);
+        }
+
         .reviews { padding: 100px 0; background-color: var(--bg-light); }
         .review-card { background: var(--white); padding: 30px; border-radius: var(--radius); box-shadow: 0 2px 10px rgba(0,0,0,0.03); margin-top: 30px; }
         .review-text { font-size: 1.1rem; color: var(--text-dark); margin-bottom: 20px; font-style: normal; }
         .reviewer-info strong { display: block; font-size: 0.9rem; }
         .reviewer-info span { font-size: 0.8rem; color: var(--text-gray); }
 
-        /* --- 7. FOOTER --- */
         footer { background-color: var(--text-dark); color: #fff; padding: 60px 0 30px; }
         .footer-content { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 40px; margin-bottom: 40px; }
         .footer-logo { font-family: 'Poppins', sans-serif; font-weight: 700; font-size: 1.5rem; margin-bottom: 15px; }
@@ -247,7 +241,6 @@
         .footer-col a:hover { opacity: 1; color: var(--primary); }
         .copyright { border-top: 1px solid #333; padding-top: 30px; text-align: center; color: #666; font-size: 0.85rem; }
 
-        /* RESPONSIVE OPTIMIZATION */
         @media (max-width: 900px) {
             .hero h1 { font-size: 3rem; }
             .value-grid { grid-template-columns: repeat(2, 1fr); }
@@ -255,28 +248,19 @@
         }
 
         @media (max-width: 768px) {
-            /* Tinh chỉnh padding cho mobile để thoáng hơn */
             .value-prop, .experience, .lead-form-section, .reviews { padding: 60px 0; }
-            
             .hero h1 { font-size: 2.2rem; }
             .hero p { font-size: 1rem; }
-            
             .value-grid { grid-template-columns: 1fr; gap: 30px; }
-            
-            .menu { display: none; } /* Ẩn menu trên mobile */
+            .menu { display: none; } 
             .menu-toggle { display: block; }
-            
             .section-header { text-align: center; margin-bottom: 40px; }
             .section-header p { margin: 0 auto; }
             .section-header h2 { font-size: 2rem; }
-            
-            /* Thẻ bài viết trên mobile */
             .card-grid { grid-template-columns: 1fr; }
-            .card-img { height: 200px; } /* Giảm chiều cao ảnh một chút trên mobile */
-            
+            .card-img { height: 200px; } 
             .form-info h2 { font-size: 2.2rem; }
             .form-box { padding: 24px; }
-            
             .footer-content { flex-direction: column; gap: 30px; }
         }
     </style>
@@ -391,6 +375,33 @@
                         <h3>Rice Fields Adventure</h3>
                     </div>
                 </div>
+
+                <div class="card">
+                    <div class="card-img" style="background-image: url('https://images.unsplash.com/photo-1662622600433-f31acfd11e04?q=80&w=870&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');">
+                    </div>
+                    <div class="card-content">
+                        <div class="card-meta">Phu Yen • Coastal</div>
+                        <h3>Ghenh Da Dia & Hidden Cliffs</h3>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-img" style="background-image: url('https://images.unsplash.com/photo-1621094305060-081171d1c171?q=80&w=774&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');">
+                         <span class="card-badge">Relax</span>
+                    </div>
+                    <div class="card-content">
+                        <div class="card-meta">Phu Quoc • Island</div>
+                        <h3>Sunset Town & Starfish Beach</h3>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-img" style="background-image: url('https://images.unsplash.com/photo-1708487864802-a85aa984c93a?q=80&w=1029&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');"></div>
+                    <div class="card-content">
+                        <div class="card-meta">Nha Trang • Diving</div>
+                        <h3>Coral Reef & Mud Bath</h3>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -422,28 +433,16 @@
                                 <option value="HoiAn">Hoi An</option>
                                 <option value="DaNang">Da Nang</option>
                                 <option value="Sapa">Sapa</option>
-                                <option value="Sapa">Phu Yen</option>
-                                <option value="Sapa">Phu Quoc</option>
-                                <option value="Sapa">Nha Trang</option>
+                                <option value="PhuYen">Phu Yen</option>
+                                <option value="PhuQuoc">Phu Quoc</option>
+                                <option value="NhaTrang">Nha Trang</option>
                             </select>
                         </div>
-
+                        
                         <div class="form-group">
                             <span class="step-pill">STEP 2</span>
-                            <label class="form-label">Travel Style</label>
-                            <select name="Style" class="form-control" required>
-                                <option value="" disabled selected>Select style...</option>
-                                <option value="Luxury">Luxury & Resort</option>
-                                <option value="Adventure">Adventure & Trekking</option>
-                                <option value="Culture">Culture & History</option>
-                                <option value="Foodie">Street Food Hunter</option>
-                            </select>
-                        </div>
-
-                        <div class="form-group">
-                            <span class="step-pill">STEP 3</span>
                             <label class="form-label">Estimated Budget (per person)</label>
-                            <select name="Budget" class="form-control" required>
+                            <select name="Budget" id="budgetSelect" class="form-control" required>
                                 <option value="" disabled selected>Select budget range...</option>
                                 <option value="4m-8m">4.000.000 - 8.000.000 VND</option>
                                 <option value="8m-12m">8.000.000 - 12.000.000 VND</option>
@@ -452,6 +451,22 @@
                                 <option value="20m+">Over 20.000.000 VND</option>
                                 <option value="flexible">I'm flexible</option>
                             </select>
+                        </div>
+
+                        <div class="form-group">
+                            <span class="step-pill">STEP 3</span>
+                            <label class="form-label">Travel Style</label>
+                            <select name="Style" id="styleSelect" class="form-control" required>
+                                <option value="" disabled selected>Select style...</option>
+                                <option value="Luxury">Luxury & Resort</option>
+                                <option value="Adventure">Adventure & Trekking</option>
+                                <option value="Culture">Culture & History</option>
+                                <option value="Foodie">Street Food Hunter</option>
+                            </select>
+                            
+                            <p id="style-warning">
+                                To ensure the best experience, <b>Luxury & Resort</b> requests require a minimum budget of 8.000.000 VND. Please adjust your budget or select a different style.
+                            </p>
                         </div>
 
                         <div class="form-group">
@@ -524,6 +539,38 @@
             </div>
         </div>
     </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Lấy các phần tử cần thiết
+            const budgetSelect = document.getElementById('budgetSelect');
+            const styleSelect = document.getElementById('styleSelect');
+            const warningText = document.getElementById('style-warning');
+
+            // Hàm kiểm tra logic
+            function validateLuxuryOption() {
+                const selectedBudget = budgetSelect.value;
+                const selectedStyle = styleSelect.value;
+
+                // Điều kiện: Budget là "4m-8m" VÀ Style là "Luxury"
+                if (selectedBudget === "4m-8m" && selectedStyle === "Luxury") {
+                    
+                    // 1. Reset ô chọn Style về rỗng
+                    styleSelect.value = "";
+                    
+                    // 2. Hiện thông báo màu đỏ
+                    warningText.style.display = "block";
+                } else {
+                    // Nếu điều kiện không còn đúng (ví dụ chọn budget cao hơn hoặc style khác), ẩn thông báo
+                    warningText.style.display = "none";
+                }
+            }
+
+            // Lắng nghe sự thay đổi trên cả 2 ô chọn
+            budgetSelect.addEventListener('change', validateLuxuryOption);
+            styleSelect.addEventListener('change', validateLuxuryOption);
+        });
+    </script>
 
 </body>
 </html>
