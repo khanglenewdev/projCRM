@@ -55,11 +55,20 @@
         }
         .nav-flex { display: flex; justify-content: space-between; align-items: center; }
         .logo-container { display: flex; align-items: center; gap: 10px; }
+        
+        /* --- FLAG ICON FIXED HERE --- */
         .flag-icon {
             width: 28px; height: 20px; background-color: var(--flag-red);
             display: flex; align-items: center; justify-content: center; border-radius: 2px;
         }
-        .flag-icon::after { content: "★"; color: var(--star-yellow); font-size: 14px; line-height: 1; }
+        .flag-icon::after { 
+            content: "★"; 
+            color: var(--star-yellow); 
+            font-size: 14px; 
+            line-height: 1;
+            padding-top: 2px; /* Added this to push the star to the visual center */
+        }
+
         .logo { font-size: 1.25rem; font-weight: 700; color: var(--text-dark); letter-spacing: -0.5px; font-family: 'Poppins', sans-serif; }
         .menu { display: flex; gap: 40px; }
         .menu a { font-weight: 500; color: var(--text-gray); }
@@ -504,69 +513,67 @@
                     <p style="color: #aaa; max-width: 300px;">Designing authentic Vietnamese journeys for travelers who seek connection, not just sightseeing.</p>
                 </div>
                 <div class="footer-col"><h4>Company</h4><a href="#">About Us</a><a href="#">Our Team</a><a href="#">Careers</a></div>
-                <div class="footer-col"><h4>Follow Us</h4><a href="https://www.instagram.com/penguin.is_chip/" target="_blank">Instagram</a><a href="https://www.facebook.com/khang.le.712715/" target="_blank">Facebook</a></div>
+                <div class="footer-col"><h4>Follow Us</h4><a href="https://www.instagram.com/penguin.is_chip/" target="_blank">Instagram</a><a href="https://www.facebook.com/" target="_blank">Facebook</a><a href="https://www.tiktok.com/" target="_blank">TikTok</a></div>
             </div>
-            <div class="copyright">&copy; 2025 Vietnam Curated. All rights reserved.</div>
+            <div class="copyright">
+                &copy; 2024 Vietnam Curated. All rights reserved.
+            </div>
         </div>
     </footer>
 
     <script>
-        // -----------------------
-        // LOGIC SLIDER REVIEW (UPDATED: CYCLING & ARROWS)
-        // -----------------------
         const track = document.getElementById('sliderTrack');
         const dots = document.querySelectorAll('.dot');
-        let currentIndex = 0;
+        let currentSlide = 0;
         const totalSlides = 3;
 
         function updateSlider() {
-            // Tính toán vị trí % để dịch chuyển
-            const percentage = currentIndex * -33.3333; 
-            track.style.transform = `translateX(${percentage}%)`;
+            track.style.transform = `translateX(-${currentSlide * 33.3333}%)`;
             
-            // Cập nhật dots
-            dots.forEach(dot => dot.classList.remove('active'));
-            dots[currentIndex].classList.add('active');
-        }
-
-        function goToSlide(slideIndex) {
-            currentIndex = slideIndex;
-            updateSlider();
+            dots.forEach((dot, index) => {
+                if (index === currentSlide) {
+                    dot.classList.add('active');
+                } else {
+                    dot.classList.remove('active');
+                }
+            });
         }
 
         function nextSlide() {
-            // Logic vòng lặp: Nếu đang ở cuối (2), cộng 1 thành 3, chia lấy dư cho 3 thì về 0
-            currentIndex = (currentIndex + 1) % totalSlides;
+            currentSlide = (currentSlide + 1) % totalSlides;
             updateSlider();
         }
 
         function prevSlide() {
-            // Logic vòng lặp lùi: Nếu ở 0, trừ 1 ra âm, cộng thêm totalSlides rồi chia lấy dư
-            currentIndex = (currentIndex - 1 + totalSlides) % totalSlides;
+            currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
             updateSlider();
         }
 
-        // -----------------------
-        // LOGIC FORM VALIDATION
-        // -----------------------
-        document.addEventListener('DOMContentLoaded', function() {
-            const budgetSelect = document.getElementById('budgetSelect');
-            const styleSelect = document.getElementById('styleSelect');
-            const warningText = document.getElementById('style-warning');
+        function goToSlide(index) {
+            currentSlide = index;
+            updateSlider();
+        }
 
-            function validateLuxuryOption() {
-                const selectedBudget = budgetSelect.value;
-                const selectedStyle = styleSelect.value;
-                if (selectedBudget === "4m-8m" && selectedStyle === "Luxury") {
-                    styleSelect.value = "";
-                    warningText.style.display = "block";
-                } else {
-                    warningText.style.display = "none";
-                }
+        // --- FORM INTERACTION LOGIC ---
+        const budgetSelect = document.getElementById('budgetSelect');
+        const styleSelect = document.getElementById('styleSelect');
+        const warningText = document.getElementById('style-warning');
+
+        function checkConstraints() {
+            const budget = budgetSelect.value;
+            const style = styleSelect.value;
+
+            // Logic: If Style is Luxury AND Budget is low (4m-8m), show warning
+            if (style === 'Luxury' && budget === '4m-8m') {
+                warningText.style.display = 'block';
+            } else {
+                warningText.style.display = 'none';
             }
-            budgetSelect.addEventListener('change', validateLuxuryOption);
-            styleSelect.addEventListener('change', validateLuxuryOption);
-        });
+        }
+
+        budgetSelect.addEventListener('change', checkConstraints);
+        styleSelect.addEventListener('change', checkConstraints);
+
     </script>
 </body>
 </html>
